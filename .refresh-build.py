@@ -196,7 +196,6 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 	<section class="page-banner">
 		<div class="container fade-up">
 			{breadcrumb_html}
-			<span class="eyebrow">{page_eyebrow}</span>
 			<h1>{page_h1}</h1>
 		</div>
 	</section>
@@ -223,7 +222,7 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 		<div class="footer-grid">
 			<div>
 				<div class="footer-brand">Iron-Art</div>
-				<p class="footer-tagline">Kowalstwo artystyczne, metaloplastyka, meble kute, balustrady kute wewnętrzne i zewnętrzne — artystyczne. Łódź · Warszawa.</p>
+				<p class="footer-tagline">Kowalstwo artystyczne, metaloplastyka, meble kute, balustrady kute wewnętrzne i zewnętrzne. Łódź · Warszawa.</p>
 				<div class="footer-socials">
 					<a href="https://www.facebook.com/Kowalstwo-artystyczne-Iron-Art-1655904824500073/" target="_blank" rel="noopener" aria-label="Facebook">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
@@ -238,25 +237,14 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 				<p><strong>E-mail</strong><span class="mail"></span></p>
 			</div>
 			<div class="footer-col">
-				<h4>Wyroby</h4>
+				<h4>Pracownia</h4>
 				<ul>
 					<li><a href="{root_prefix}balustrady-wewnetrzne.html">Balustrady kute</a></li>
 					<li><a href="{root_prefix}meble-kute.html">Meble kute</a></li>
 					<li><a href="{root_prefix}metaloplastyka.html">Metaloplastyka</a></li>
-					<li><a href="{root_prefix}ogrodzenia-kute.html">Ogrodzenia i bramy</a></li>
-					<li><a href="{root_prefix}wystroj-wnetrz.html">Wystrój wnętrz</a></li>
-					<li><a href="{root_prefix}projekty-kute.html">Projekty</a></li>
-				</ul>
-			</div>
-			<div class="footer-col">
-				<h4>Pracownia</h4>
-				<ul>
-					<li><a href="{root_prefix}nasza-pracownia-lodz.html">Pracownia Kowalska</a></li>
-					<li><a href="{root_prefix}pracownia-jubilerska-lodz.html">Pracownia Jubilerska</a></li>
-					<li><a href="{root_prefix}renowacja-metaloplastyki.html">Renowacja</a></li>
 					<li><a href="{root_prefix}meble-kute-sklep.html">Sklep</a></li>
+					<li><a href="{root_prefix}renowacja-metaloplastyki.html">Renowacja</a></li>
 					<li><a href="{root_prefix}kowalstwo-lodz.html">Kontakt</a></li>
-					<li><a href="{root_prefix}kowalstwo-artystyczne-warszawa.html">Warszawa</a></li>
 				</ul>
 			</div>
 		</div>
@@ -337,10 +325,22 @@ def extract(html):
     h1 = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S)
     h1 = re.sub(r"<[^>]+>", "", h1.group(1)).strip() if h1 else ""
 
-    # Content: take everything inside <section class="tresc">...</section>
+    # Content extraction — supports old layout (<section class="tresc">) and v2 (<article class="prose">/.gallery wrapper).
     m = re.search(r'<section class="tresc">(.*?)</section>\s*(?:</main>|<iframe[^>]*src="https://www\.google|<footer)',
                   html, re.S)
+    if not m:
+        # v2 layout: pull everything inside the page's main content section (after page-banner + ornament)
+        m = re.search(r'<main>\s*<section class="page-banner">.*?</section>\s*(?:<div class="ornament".*?</div>\s*)?<section class="section">\s*<div class="container">\s*(.*?)\s*</div>\s*</section>\s*</main>',
+                      html, re.S)
     content = m.group(1) if m else ""
+
+    # If v2 fade-up wrapper is present, unwrap it
+    content = re.sub(r'^\s*<(article|div) class="(?:prose )?fade-up[^"]*">(.*)</\1>\s*$',
+                     r'\2', content, flags=re.S).strip()
+    content = re.sub(r'^\s*<article class="prose fade-up">(.*)</article>\s*$',
+                     r'\1', content, flags=re.S).strip()
+    content = re.sub(r'^\s*<div class="fade-up">(.*)</div>\s*$',
+                     r'\1', content, flags=re.S).strip()
 
     # Drop the first <h1>...</h1> from content (we use it as page banner)
     content = re.sub(r"<h1[^>]*>.*?</h1>", "", content, count=1, flags=re.S)
