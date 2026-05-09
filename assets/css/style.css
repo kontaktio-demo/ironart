@@ -210,14 +210,30 @@ nav a:visited{
 	position:fixed;
 	bottom:10px;
 	right:9px;
+	border-radius:50%;
+	box-shadow:0 4px 14px rgba(0,0,0,.35);
+	transition:transform .2s ease, box-shadow .2s ease;
 }
 .telefon:hover{
 	background-position:right top;
+	transform:scale(1.06);
+	box-shadow:0 6px 18px rgba(0,0,0,.45);
 }
 .facebook{
 	position:fixed;
 	bottom:70px;
 	right:10px;
+	border-radius:6px;
+	box-shadow:0 4px 14px rgba(0,0,0,.35);
+	overflow:hidden;
+	transition:transform .2s ease, box-shadow .2s ease;
+}
+.facebook:hover{
+	transform:scale(1.06);
+	box-shadow:0 6px 18px rgba(0,0,0,.45);
+}
+.facebook>img{
+	display:block;
 }
 .facebook>img:hover{
 	opacity:0.9;
