@@ -1,0 +1,73 @@
+.formularz  span.kod_kontrolny {
+    background: none repeat scroll 0 0 #999;
+    display: inline-block;
+    font-size: 18px;
+    height: 14px;
+    padding: 5px;
+    position: relative;
+    width: 48px;
+	margin-right:10px;
+	top:6px;
+}
+span.kod_kontrolny span {
+    color: #fff;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 1px;
+    width: 10px;
+}
+.blad{
+	color:red;
+}
+/*FORMULARZ*/
+.formularz{
+	width:62%;
+	display:block;
+	margin-bottom:20px;
+}
+.formularz *{
+	width:100%;
+}
+.formularz p{
+	margin-bottom:2px;
+}
+.formularz textarea{
+	height:16em;
+}
+.formularz h2{
+	margin-top:30px;
+}
+.formularz input.wyslij{
+	height:35px;
+	background:#6a0209;
+	cursor:pointer;
+	color:#fff;
+	width:100%;
+	font-size:17px;
+	margin-top:6px;
+	border:solid 1px #FACACA;
+}
+.formularz input.wyslij:hover{
+	color:#FACACA;
+}
+.formularz{
+	padding-bottom:20px;
+}
+.formularz div+p{
+	font-size:12px;
+	text-align:justify;
+}
+.dziekujemy{
+	font-size:16px;
+	color:#861c33;
+	text-align:center;
+	padding-top:50px;
+}
+
+
+input.kontrola{
+	width:80px;
+	min-width:100px;
+	font-size:17px;
+}

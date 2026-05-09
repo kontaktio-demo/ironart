@@ -1,0 +1,33 @@
+.produkt{
+	border:solid 1px #6a0209;
+	display:block;
+	margin:0px 0px 10px 0px;
+	padding:10px 2% 10px 2%;
+	overflow:hidden;
+}
+.produkt > div{
+	float:left;
+}
+.produkt > div+div{
+	float:right;
+	text-align:right;
+}
+.produkt .entry-images{
+	text-align:left;
+}
+.cena{
+	font-size:22px;
+}
+.cena span{
+	color:red;
+}
+.stara_cena{
+	color:red;
+	font-size:22px;
+}
+.stara_cena span{
+	text-decoration:line-through;
+}
+@media screen and (max-width: 520px){
+
+}

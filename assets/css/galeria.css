@@ -1,0 +1,29 @@
+.galeria{
+	display:flex;
+	flex-wrap:wrap;
+}
+figure{
+	display:inline-block;
+	text-align:center;
+	font-size:14px;
+	border:solid 1px #6a0209;
+	margin:0px;
+	width:21%;
+	margin:10px 0.5% 10px 0.5%;
+	padding:10px 1% 10px 1%;
+}
+@media screen and (max-width: 640px){
+	figure{
+		width:44%;
+	}
+}
+@media screen and (max-width: 460px){
+	figure{
+		display:block;
+		width:auto;
+		margin:10px 0% 10px 0%;
+		width:100%;
+		text-align:center;
+	}
+	
+}

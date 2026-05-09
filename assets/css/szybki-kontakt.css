@@ -1,0 +1,97 @@
+.formularz  span.kod_kontrolny {
+    background: none repeat scroll 0 0 #999;
+    display: inline-block;
+    font-size: 18px;
+    height: 1em;
+    padding: 0.2em 0.4em 0.2em 0.4em;
+    position: relative;
+    width: 4em;
+	margin-right:5px;
+	top:-0.2em;
+}
+span.kod_kontrolny span {
+    color: #fff;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0em;
+    width: 0.9em;
+}
+.blad{
+	color:red;
+}
+/*FORMULARZ*/
+.formularz{
+	float:right;
+	width:59%;
+	display:block;
+	margin-bottom:20px;
+}
+.formularz>td{
+	width:48%;
+	padding-right:2%;
+}
+.formularz p{
+	margin:0px 0px 2px 0px;
+	
+}
+.formularz textarea{
+	height:3em;
+}
+.formularz textarea,.formularz input{
+	width:99%;
+}
+.formularz input[type='file']{
+	width:auto;
+}
+.formularz input.wyslij{
+	background:#6a0209;
+	cursor:pointer;
+	color:#fff;
+	float:right;
+	font-size:15px;
+	font-weight:bold;
+	border:solid 1px #FACACA;
+	padding:3px 20px 3px 20px;
+	width:auto;
+}
+.formularz input.wyslij:hover{
+	color:#FACACA;
+}
+.dziekujemy{
+	font-size:16px;
+	color:#861c33;
+	text-align:center;
+	padding-top:50px;
+}
+input[name="file"]{
+	width:auto;
+}
+
+input.kontrola{
+	width:4em;
+	position:relative;
+	top:-0.2em;
+	font-size:18px;
+	letter-spacing:1px;
+}
+.formularz>p{
+	font-size:10px;
+	text-align:justify;
+}
+@media screen and (max-width: 460px){
+	.formularz td{
+		width:100%;
+		display:block;
+	}
+	.formularz{
+		padding-top:30px;
+		width:100%;
+		float:none;
+	}
+	.formularz input.wyslij{
+		float:none;
+		width:100%;
+		margin-top:0.1em;
+	}
+}

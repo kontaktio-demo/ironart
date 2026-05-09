@@ -1,0 +1,21 @@
+iframe{
+	width:100%;
+	border:solid 1px #FF611C;
+	height:400px;
+}
+.tresc > div{
+	display:flex;
+}
+.tekst{
+	width:36%;
+	padding-right:2%;
+}
+@media screen and (max-width: 650px){
+	.tresc > div{
+		display:block;
+	}
+	.tresc > div > *{
+		display:block;
+		width:100%;
+	}
+}
