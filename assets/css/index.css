@@ -28,6 +28,12 @@ main>iframe{
 	background-position:left bottom;
 	text-align:right;
 	padding-top:70px;
+	border-radius:4px;
+	transition:transform .2s ease, box-shadow .2s ease;
+}
+.header_boxy > div a:hover{
+	transform:translateY(-2px);
+	box-shadow:0 6px 16px rgba(0,0,0,.45);
 }
 .full{
 	float:right;

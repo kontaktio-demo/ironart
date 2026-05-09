@@ -159,7 +159,8 @@ h4{
 	display:inline-block;
 	color:#fff;
 	position:relative;
-	cursor:pointer;		
+	cursor:pointer;
+	transition:background .2s ease;
 }
 .menu nav > *:hover,.menu_hover{
 	background: #0275d8;
