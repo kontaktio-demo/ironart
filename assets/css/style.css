@@ -1,12 +1,9 @@
-/* ============================================================
-   Iron-Art Łódź — kowalstwo artystyczne
-   Design tokens + global styles + components
-   ============================================================ */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
-	/* Palette — warmer, brassier */
+	
 	--ink: #0E0C09;
 	--ink-2: #181410;
 	--ink-3: #221C15;
@@ -20,26 +17,25 @@
 	--rose: #F2C0BD;
 	--rose-soft: #F79F9E;
 
-	/* Type */
+	
 	--font-display: 'Cinzel', 'Cormorant Garamond', 'Petrona', Georgia, serif;
 	--font-serif: 'Cormorant Garamond', Georgia, serif;
 	--font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-	/* Layout — denser */
+	
 	--container: 1240px;
 	--gutter: clamp(1rem, 3vw, 2rem);
 	--section-y: clamp(2rem, 5vw, 3.75rem);
 	--radius: 4px;
 	--radius-lg: 8px;
 
-	/* Motion */
+	
 	--ease: cubic-bezier(.4,.2,.2,1);
 
-	/* Subtle metal grain background — used on .section--alt and prose */
+	
 	--grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.83 0 0 0 0 0.65 0 0 0 0 0.32 0 0 0 0.05 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='.7'/></svg>");
 }
 
-/* ---------- Reset ---------- */
 *,*::before,*::after{box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 body{overflow-x:hidden;}
@@ -50,7 +46,6 @@ button,input,textarea,select{font:inherit;color:inherit;}
 button{border:0;background:none;cursor:pointer;}
 iframe{max-width:100%;}
 
-/* ---------- Base ---------- */
 body{
 	font-family:var(--font-body);
 	font-size:16px;
@@ -78,7 +73,6 @@ strong{color:var(--bone);font-weight:600;}
 }
 .prose a:hover{color:var(--brass);text-decoration-color:var(--brass);}
 
-/* ---------- Typography ---------- */
 h1,h2{
 	font-family:var(--font-display);
 	font-weight:500;
@@ -110,7 +104,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	margin-bottom:.75rem;
 }
 
-/* ---------- Layout ---------- */
 .container{
 	width:100%;
 	max-width:var(--container);
@@ -118,6 +111,23 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	padding-inline:var(--gutter);
 }
 .section{padding-block:var(--section-y);position:relative;}
+.section-block{display:flex;flex-direction:column;gap:1.25rem;}
+.section-title{
+	margin:0;
+	text-align:center;
+	font-size:clamp(1.4rem,2.6vw,1.85rem);
+}
+.section-lead{
+	max-width:70ch;
+	margin:0 auto;
+	text-align:center;
+	color:var(--bone);
+}
+.section-lead p{margin:0 0 .75rem;line-height:1.65;}
+.section-lead p:last-child{margin-bottom:0;}
+.section-lead a{color:var(--bone);text-decoration:underline;text-decoration-color:rgba(140,96,34,.5);text-underline-offset:3px;}
+.section-lead a:hover{color:var(--brass);text-decoration-color:var(--brass);}
+.section-lead strong{color:var(--bone);}
 .section--alt{
 	background:var(--ink-2);
 	background-image:var(--grain);
@@ -132,7 +142,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 }
 .section > .container{position:relative;z-index:1;}
 
-/* ---------- Ornament divider ---------- */
 .ornament{
 	display:flex;
 	align-items:center;
@@ -150,9 +159,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 }
 .ornament svg{flex-shrink:0;opacity:.9;}
 
-/* ============================================================
-   HEADER
-   ============================================================ */
 .site-header{
 	position:sticky;
 	top:0;
@@ -301,7 +307,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .header-cta svg{color:var(--rose);transition:color .2s var(--ease);opacity:.85;}
 .header-cta:hover svg{color:var(--rose-soft);opacity:1;}
 
-/* Hamburger button */
 .menu-toggle{
 	display:none;
 	flex-direction:column;
@@ -319,7 +324,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	transition:transform .25s var(--ease), opacity .2s var(--ease);
 }
 
-/* Mobile fullscreen overlay nav */
 .mobile-nav{
 	position:fixed;
 	inset:0;
@@ -376,9 +380,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 
 .mobile-nav .lang-switch{margin-top:auto;padding-top:2rem;font-size:1rem;}
 
-/* ============================================================
-   HERO — 6 category tiles + center video, like the original layout
-   ============================================================ */
 .hero{
 	padding-block:1.25rem 1.5rem;
 	background:var(--ink);
@@ -488,7 +489,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	background:linear-gradient(180deg, rgba(14,12,9,.15) 0%, transparent 25%, transparent 75%, rgba(14,12,9,.55) 100%);
 }
 
-/* Embers — drifting brass particles in front of the fire video */
 .hero-video .embers{
 	position:absolute;
 	inset:0;
@@ -559,9 +559,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	.hero-video{min-height:0;aspect-ratio:16/10;}
 }
 
-/* ============================================================
-   CATEGORY CARDS
-   ============================================================ */
 .cards{
 	display:grid;
 	grid-template-columns:repeat(3,1fr);
@@ -633,9 +630,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .card-arrow svg{transition:transform .25s var(--ease);}
 .card:hover .card-arrow svg{transform:translateX(4px);}
 
-/* ============================================================
-   SPLIT SECTIONS (text + image)
-   ============================================================ */
 .split{
 	display:grid;
 	grid-template-columns:1.1fr .9fr;
@@ -660,8 +654,31 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .split-text p{margin-bottom:.85rem;color:var(--bone);}
 .split-text p:last-child{margin-bottom:0;}
 
-/* Prose blocks (content pages) */
-.prose{max-width:75ch;margin-inline:auto;}
+.prose{max-width:none;margin-inline:auto;}
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > h2,
+.prose > h3,
+.prose > h4{
+	max-width:75ch;
+	margin-inline:auto;
+}
+.prose > div > p,
+.prose > div > ul,
+.prose > div > ol,
+.prose > div > h2,
+.prose > div > h3,
+.prose > div > h4{
+	max-width:75ch;
+	margin-inline:auto;
+}
+.prose .gallery,
+.prose > .gallery,
+.prose > div > .gallery{
+	max-width:none;
+	margin-inline:0;
+}
 .prose > * + *{margin-top:.95em;}
 .prose h2{margin-top:1.8em;}
 .prose h3{margin-top:1.4em;}
@@ -678,7 +695,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	transform:rotate(45deg);
 }
 
-/* ---------- Spec grid (2-col list with brass numerals) ---------- */
 .spec-grid{
 	display:grid;
 	grid-template-columns:repeat(2,1fr);
@@ -750,9 +766,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	margin:.3em 1.5em 1em 0;
 }
 
-/* ============================================================
-   GALLERY
-   ============================================================ */
 .gallery{
 	display:grid;
 	grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
@@ -803,7 +816,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	padding:0 .15rem;
 }
 
-/* Lightbox */
 .lightbox{
 	position:fixed;
 	inset:0;
@@ -853,9 +865,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	letter-spacing:.15em;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 .site-footer{
 	background:var(--ink-2);
 	color:var(--bone);
@@ -920,12 +929,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .footer-bottom a{color:var(--ash);text-decoration:underline;text-decoration-color:rgba(212,166,83,.4);text-underline-offset:3px;}
 .footer-bottom a:hover{color:var(--brass);}
 
-/* (Floating phone/Facebook removed — phone CTA lives in the header,
-   Facebook lives in the footer) */
-
-/* ============================================================
-   COOKIE BANNER
-   ============================================================ */
 .cookies{
 	position:fixed;
 	left:1rem;
@@ -965,9 +968,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .cookies .zamknij:hover,
 .cookies .btn-cookie:hover{background:var(--brass-soft);color:var(--ink);}
 
-/* ============================================================
-   IFRAMES (map, video)
-   ============================================================ */
 .embed-frame{
 	position:relative;
 	width:100%;
@@ -985,9 +985,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 }
 .map-frame{aspect-ratio:21/9;}
 
-/* ============================================================
-   FORMS
-   ============================================================ */
 .form-row{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
 .form-row label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);font-weight:600;}
 .form-row input,.form-row textarea{
@@ -1000,9 +997,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 }
 .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--brass);}
 
-/* ============================================================
-   SCROLL ANIMATIONS
-   ============================================================ */
 .js .fade-up{
 	opacity:0;
 	transform:translateY(20px);
@@ -1016,9 +1010,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	html{scroll-behavior:auto;}
 }
 
-/* ============================================================
-   PAGE BANNER (subpage hero)
-   ============================================================ */
 .page-banner{
 	position:relative;
 	padding-block:2.25rem 1.75rem;
@@ -1053,7 +1044,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	color:var(--ash);
 }
 
-/* Breadcrumb */
 .crumbs{
 	display:flex;
 	justify-content:center;
@@ -1068,9 +1058,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .crumbs a:hover{color:var(--bone);}
 .crumbs .sep{color:var(--ash);opacity:.5;}
 
-/* ============================================================
-   RESPONSIVE BREAKPOINTS
-   ============================================================ */
 @media (max-width: 1080px){
 	.primary-nav,.lang-switch.desktop-only{display:none;}
 	.menu-toggle{display:flex;}
@@ -1083,7 +1070,7 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	.split-media img{max-height:380px;}
 	.split-media.split-media--portrait img{max-height:420px;}
 	.footer-grid{grid-template-columns:1fr 1fr;}
-	/* video + map split */
+	
 	.section .split[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
 @media (max-width: 860px){
@@ -1146,7 +1133,6 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	.menu-toggle{width:26px;height:18px;}
 }
 
-/* Body lock when mobile menu open */
 body.nav-open{overflow:hidden;}
 .menu-toggle.is-active span:nth-child(1){transform:translateY(10px) rotate(45deg);}
 .menu-toggle.is-active span:nth-child(2){opacity:0;}

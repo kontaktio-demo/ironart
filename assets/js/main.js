@@ -1,6 +1,4 @@
-// Iron-Art — main script
-// Vanilla, no dependencies. Handles: mobile nav, scroll fade-in,
-// hero parallax, gallery lightbox, scrolled-header state.
+
 
 (function () {
   'use strict';
@@ -9,7 +7,6 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---------- Mobile navigation ----------
   const toggle = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
 
@@ -45,7 +42,6 @@
     });
   }
 
-  // ---------- Header scrolled state ----------
   const header = document.querySelector('.site-header');
   if (header) {
     const onScroll = function () {
@@ -55,7 +51,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // ---------- Reveal on scroll (with stagger inside parents) ----------
   const targets = document.querySelectorAll('.fade-up');
   if ('IntersectionObserver' in window && targets.length) {
     const io = new IntersectionObserver(function (entries) {
@@ -71,14 +66,12 @@
     targets.forEach(function (t) { t.classList.add('is-visible'); });
   }
 
-  // Stagger children that opt-in via .stagger
   document.querySelectorAll('.stagger').forEach(function (parent) {
     Array.prototype.slice.call(parent.children).forEach(function (child, i) {
       child.style.transitionDelay = (i * 70) + 'ms';
     });
   });
 
-  // ---------- Hero parallax ----------
   const heroVideo = document.querySelector('.hero-video');
   if (heroVideo && !reduceMotion) {
     let ticking = false;
@@ -94,7 +87,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // ---------- Lightbox ----------
   const galleryLinks = Array.from(document.querySelectorAll('.gallery a[href]'));
   if (galleryLinks.length) {
     const lb = document.createElement('div');

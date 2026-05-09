@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/shop/
+
+Sitemap: https://ironart.vercel.app/sitemap.xml
