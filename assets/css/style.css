@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petrona:wght@100;200;300;400;500;600&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200&display=swap');
 
+html{
+	scroll-behavior:smooth;
+}
 a{
 	text-decoration:none;
 	cursor:pointer;
