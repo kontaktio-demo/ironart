@@ -119,14 +119,14 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
         ariaLogo = "Iron-Art — strona główna"
         ariaPhone = "Zadzwoń"
         ctaLabel = "+48 887 432 093"
-        brandTag = "Kowalstwo Artystyczne · Łódź"
+        brandTag = 'Kowalstwo Artystyczne <em>·</em> Jubilerstwo <em>·</em> Łódź'
     else:
         cookie_text = 'Our <strong>Artistic Blacksmithing</strong> website uses cookies only for traffic statistics.'
         ariaMenu = "Open menu"
         ariaLogo = "Iron-Art — home"
         ariaPhone = "Call"
         ctaLabel = "+48 887 432 093"
-        brandTag = "Artistic Blacksmithing · Łódź"
+        brandTag = 'Artistic Blacksmithing <em>·</em> Jewellery <em>·</em> Łódź'
 
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -155,11 +155,8 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 <header class="site-header">
 	<div class="container header-inner">
 		<a href="{pl_index}" class="brand" aria-label="{ariaLogo}">
-			<img src="{asset_prefix}images/kowalstwo-artystyczne-lodz.webp" alt="Iron-Art Łódź">
-			<span>
-				<span class="brand-name">Iron-Art</span>
-				<span class="brand-tag">{brandTag}</span>
-			</span>
+			<img src="{asset_prefix}images/kowalstwo-artystyczne-lodz.webp" alt="Iron-Art — Kowalstwo Artystyczne Łódź">
+			<span class="brand-tag">{brandTag}</span>
 		</a>
 
 		<nav class="primary-nav" aria-label="Primary">
@@ -221,7 +218,7 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 	<div class="container">
 		<div class="footer-grid">
 			<div>
-				<div class="footer-brand">Iron-Art</div>
+				<img class="footer-logo" src="{asset_prefix}images/kowalstwo-artystyczne-lodz.webp" alt="Iron-Art — Kowalstwo Artystyczne">
 				<p class="footer-tagline">Kowalstwo artystyczne, metaloplastyka, meble kute, balustrady kute wewnętrzne i zewnętrzne. Łódź · Warszawa.</p>
 				<div class="footer-socials">
 					<a href="https://www.facebook.com/Kowalstwo-artystyczne-Iron-Art-1655904824500073/" target="_blank" rel="noopener" aria-label="Facebook">
