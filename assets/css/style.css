@@ -27,7 +27,7 @@ table{border-spacing:0px;}
 	font-family: "Petrona";
 	font-size:24px;
 	color:#FACBCB;
-	text-shadow:1px 1px 0px 0px #F0C2C2;
+	text-shadow:1px 1px 0 #F0C2C2;
 	line-height:1em;
 }
 .youtube{
@@ -141,7 +141,7 @@ h4{
 }
 .menu nav > *{
 	padding:11px 1% 8px 1%;
-	display:block-inline;
+	display:inline-block;
 	color:#fff;
 	position:relative;
 	cursor:pointer;		
@@ -159,7 +159,7 @@ h4{
 	position:absolute;
 	top:43px;
 	font-size:14px;
-	z-index:100px;
+	z-index:100;
 	border-top:none;
 	height:0px;	
     overflow: hidden;
@@ -317,8 +317,9 @@ a.zamknij{
 		margin:0px auto 0px auto;
 	}
 	.tresc{
-		padding:0px 20px 60px 20px;	
+		padding:0px 20px 60px 20px;
 	}
+}
 @media screen and (max-width: 460px){
 
 	footer .centrum{
