@@ -10,10 +10,11 @@ a:hover {text-decoration: none;}
 img{
 	max-width:100%;
 }
-body{ 
-	font-family:'Roboto Condensed',Tahoma;
+body{
+	font-family:'Roboto Condensed', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Tahoma, sans-serif;
 	color:#315A82;
 	font-size:16px;
+	line-height:1.6;
 	margin: 0px;
 	background:#6A0209;
 
@@ -89,7 +90,13 @@ main{
 	overflow:hidden;
 	max-width:1120px;
 	background: url(../images/r-lg.png) no-repeat left top,url(../images/r-pg.png) no-repeat right top,
-	url(../images/r-ld.png) no-repeat left bottom,url(../images/r-pd.png) no-repeat right bottom;	
+	url(../images/r-ld.png) no-repeat left bottom,url(../images/r-pd.png) no-repeat right bottom;
+}
+.tresc p{
+	max-width:75ch;
+}
+.tresc ul li{
+	margin-bottom:.4em;
 }
 .film{
 	width: 100%;
