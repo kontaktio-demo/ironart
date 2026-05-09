@@ -64,6 +64,21 @@ EN_SUB_WORKSHOP = [
 ]
 
 
+def clean(href, lang):
+    """Strip trailing .html and rewrite home links."""
+    if href.startswith('http') or href.startswith('mailto:') or href.startswith('tel:'):
+        return href
+    h = href[:-5] if href.endswith('.html') else href
+    # rewrite home
+    if lang == 'en':
+        if h in ('../index', '../'): return '/'
+        if h == 'index': return '/en/'
+    else:
+        if h == 'index': return '/'
+        if h == 'en/index': return '/en/'
+    return h
+
+
 def build_nav(active_slug, lang):
     if lang == "pl":
         links = PL_NAV_LINKS
@@ -75,31 +90,31 @@ def build_nav(active_slug, lang):
             out.append('<li class="has-sub"><span>Wyroby <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="submenu">')
             for sh, sl in PL_SUB_WYROBY:
                 a_cls = ' class="is-active"' if sh == active_slug else ''
-                out.append(f'<a href="{sh}"{a_cls}>{sl}</a>')
+                out.append(f'<a href="{clean(sh, lang)}"{a_cls}>{sl}</a>')
             out.append('</div></li>')
             continue
         if href == "__SUB_PRACOWNIE__":
             out.append('<li class="has-sub"><span>Pracownie <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="submenu">')
             for sh, sl in PL_SUB_PRACOWNIE:
                 a_cls = ' class="is-active"' if sh == active_slug else ''
-                out.append(f'<a href="{sh}"{a_cls}>{sl}</a>')
+                out.append(f'<a href="{clean(sh, lang)}"{a_cls}>{sl}</a>')
             out.append('</div></li>')
             continue
         if href == "__SUB_PRODUCTS__":
             out.append('<li class="has-sub"><span>Products <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="submenu">')
             for sh, sl in EN_SUB_PRODUCTS:
                 a_cls = ' class="is-active"' if sh == active_slug else ''
-                out.append(f'<a href="{sh}"{a_cls}>{sl}</a>')
+                out.append(f'<a href="{clean(sh, lang)}"{a_cls}>{sl}</a>')
             out.append('</div></li>')
             continue
         if href == "__SUB_WORKSHOP__":
             out.append('<li class="has-sub"><span>Workshop <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="submenu">')
             for sh, sl in EN_SUB_WORKSHOP:
-                out.append(f'<a href="{sh}">{sl}</a>')
+                out.append(f'<a href="{clean(sh, lang)}">{sl}</a>')
             out.append('</div></li>')
             continue
         a_cls = ' class="is-active"' if href == active_slug else ''
-        out.append(f'<li><a href="{href}"{a_cls}>{label}</a></li>')
+        out.append(f'<li><a href="{clean(href, lang)}"{a_cls}>{label}</a></li>')
     out.append('</ul>')
     return '\n\t\t\t'.join(out)
 
@@ -236,28 +251,21 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 			<div class="footer-col">
 				<h4>Pracownia</h4>
 				<ul>
-					<li><a href="{root_prefix}balustrady-wewnetrzne.html">Balustrady kute</a></li>
-					<li><a href="{root_prefix}meble-kute.html">Meble kute</a></li>
-					<li><a href="{root_prefix}metaloplastyka.html">Metaloplastyka</a></li>
-					<li><a href="{root_prefix}meble-kute-sklep.html">Sklep</a></li>
-					<li><a href="{root_prefix}renowacja-metaloplastyki.html">Renowacja</a></li>
-					<li><a href="{root_prefix}kowalstwo-lodz.html">Kontakt</a></li>
+					<li><a href="{root_prefix}balustrady-wewnetrzne">Balustrady kute</a></li>
+					<li><a href="{root_prefix}meble-kute">Meble kute</a></li>
+					<li><a href="{root_prefix}metaloplastyka">Metaloplastyka</a></li>
+					<li><a href="{root_prefix}meble-kute-sklep">Sklep</a></li>
+					<li><a href="{root_prefix}renowacja-metaloplastyki">Renowacja</a></li>
+					<li><a href="{root_prefix}kowalstwo-lodz">Kontakt</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<span>© Iron Art Łódź, <a href="{root_prefix}kowalstwo-artystyczne-warszawa.html">Warszawa</a> 2004–2026</span>
+			<span>© Iron Art Łódź, <a href="{root_prefix}kowalstwo-artystyczne-warszawa">Warszawa</a> 2004–2026</span>
 			<a href="https://www.blumo.pl/" target="_blank" rel="noopener">Web Design — blumo.pl</a>
 		</div>
 	</div>
 </footer>
-
-<a class="float-phone" href="tel:887432093" aria-label="{ariaPhone}">
-	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-</a>
-<a class="float-fb" href="https://www.facebook.com/Kowalstwo-artystyczne-Iron-Art-1655904824500073/" target="_blank" rel="noopener" aria-label="Facebook">
-	<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
-</a>
 
 <div id="cookies" class="cookies">
 	<p>{cookie_text}</p>
@@ -368,7 +376,7 @@ def transform_content(content):
 def crumb_html(label, root_prefix, lang):
     home = "Strona główna" if lang == "pl" else "Home"
     return (f'<nav class="crumbs" aria-label="Breadcrumb">'
-            f'<a href="{root_prefix}index.html">{home}</a>'
+            f'<a href="{root_prefix}index">{home}</a>'
             f'<span class="sep">›</span>'
             f'<span>{label}</span>'
             f'</nav>')
@@ -396,21 +404,25 @@ def process(filepath, lang):
         eyebrow = EYEBROWS_PL.get(name, "Iron-Art")
         asset_prefix = "assets/"
         root_prefix = ""
-        pl_index = "index.html"
-        en_index = "en/index.html"
+        pl_index = "/"
+        en_index = "/en/"
     else:
         eyebrow = EYEBROWS_EN.get(name, "Iron-Art")
         asset_prefix = "../assets/"
         root_prefix = "../"
-        pl_index = "../index.html"
-        en_index = "index.html"
+        pl_index = "/"
+        en_index = "/en/"
 
     crumb = crumb_html(h1 or title, root_prefix, lang)
 
     # Decide content wrapper: prose for text-heavy, plain container for galleries
     has_gallery = '<div class="gallery">' in content
     if has_gallery:
-        body_inner = f'<div class="fade-up">{content}</div>'
+        # Add fade-up to each <figure> for a subtle stagger reveal
+        content = re.sub(r'<figure>', '<figure class="fade-up">', content)
+        # Apply staggered delay via .stagger on the gallery wrapper
+        content = re.sub(r'<div class="gallery">', '<div class="gallery stagger">', content)
+        body_inner = f'<div>{content}</div>'
     else:
         body_inner = f'<article class="prose fade-up">{content}</article>'
 
