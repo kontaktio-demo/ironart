@@ -178,11 +178,6 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 			{nav}
 		</nav>
 
-		<div class="lang-switch desktop-only">
-			<a href="{pl_index}"{' class="is-active"' if lang=='pl' else ''}>PL</a>
-			<span class="sep">·</span>
-			<a href="{en_index}"{' class="is-active"' if lang=='en' else ''}>EN</a>
-		</div>
 		<a class="header-cta" href="tel:887432093">
 			<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
 			{ctaLabel}
@@ -196,11 +191,6 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 
 <nav class="mobile-nav" aria-label="Mobile menu">
 	{nav}
-	<div class="lang-switch">
-		<a href="{pl_index}"{' class="is-active"' if lang=='pl' else ''}>PL</a>
-		<span class="sep">·</span>
-		<a href="{en_index}"{' class="is-active"' if lang=='en' else ''}>EN</a>
-	</div>
 </nav>
 
 <main>
@@ -243,8 +233,7 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 			</div>
 			<div class="footer-col">
 				<h4>Kontakt</h4>
-				<p><strong>Adres pracowni</strong>ul. Beskidzka 59<br>91-611 Łódź</p>
-				<p><strong>Adres biura</strong>ul. Brzezińska 38<br>92-103 Łódź</p>
+				<p><strong>Adres</strong>ul. Brzezińska 38<br>92-103 Łódź</p>
 				<p><strong>Telefon</strong><a href="tel:887432093">+48 887 432 093</a></p>
 				<p><strong>E-mail</strong><span class="mail"></span></p>
 			</div>
@@ -262,7 +251,7 @@ def page_template(*, lang, asset_prefix, root_prefix, title, description, keywor
 		</div>
 		<div class="footer-bottom">
 			<span>© Iron Art Łódź, <a href="{root_prefix}kowalstwo-artystyczne-warszawa">Warszawa</a> 2004–2026</span>
-			<a href="https://www.blumo.pl/" target="_blank" rel="noopener">Web Design — blumo.pl</a>
+			<a href="https://kontaktio.pl/" target="_blank" rel="noopener">Zrobione przez Kontaktio</a>
 		</div>
 	</div>
 </footer>

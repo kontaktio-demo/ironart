@@ -422,7 +422,7 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	position:absolute;
 	inset:0;
 	background-size:cover;
-	background-position:center;
+	background-position:var(--tile-pos, center);
 	background-image:var(--tile-bg);
 	filter:brightness(.5) saturate(.9) sepia(.15);
 	transition:filter .35s var(--ease), transform .5s var(--ease);
@@ -666,7 +666,7 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 .prose h2{margin-top:1.8em;}
 .prose h3{margin-top:1.4em;}
 .prose ul{padding-left:1.4em;list-style:none;}
-.prose ul li{position:relative;padding-left:1.2em;margin-bottom:.45em;}
+.prose ul li{position:relative;padding-left:1.2em;margin-bottom:.55em;}
 .prose ul li::before{
 	content:"";
 	position:absolute;
@@ -676,6 +676,61 @@ h4{font-size:1.05rem;margin-bottom:.35rem;}
 	height:6px;
 	background:var(--brass);
 	transform:rotate(45deg);
+}
+
+/* ---------- Spec grid (2-col list with brass numerals) ---------- */
+.spec-grid{
+	display:grid;
+	grid-template-columns:repeat(2,1fr);
+	gap:.9rem 1.5rem;
+	counter-reset:spec;
+	margin-block:1.25rem;
+}
+.spec-item{
+	display:flex;
+	gap:1rem;
+	padding:1.1rem 1.2rem;
+	background:rgba(24,20,16,.45);
+	border:1px solid rgba(212,166,83,.1);
+	border-radius:6px;
+	counter-increment:spec;
+	transition:border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
+}
+.spec-item:hover{
+	border-color:rgba(212,166,83,.3);
+	background:rgba(24,20,16,.7);
+	transform:translateY(-2px);
+}
+.spec-item::before{
+	content:counter(spec, decimal-leading-zero);
+	flex-shrink:0;
+	font-family:var(--font-display);
+	font-size:1.35rem;
+	font-weight:500;
+	color:var(--brass);
+	line-height:1.1;
+	min-width:1.85rem;
+	letter-spacing:.05em;
+}
+.spec-item p{
+	margin:0;
+	font-size:.92rem;
+	line-height:1.6;
+	color:var(--bone);
+}
+.spec-item strong{color:var(--bone);}
+.spec-intro{
+	max-width:60ch;
+	margin:0 auto 1.5rem;
+	text-align:center;
+	color:var(--ash);
+	font-size:1rem;
+	line-height:1.6;
+}
+@media (max-width: 720px){
+	.spec-grid{grid-template-columns:1fr;gap:.7rem;}
+	.spec-item{padding:.9rem 1rem;}
+	.spec-item::before{font-size:1.2rem;min-width:1.6rem;}
 }
 .prose img{
 	max-width:100%;
