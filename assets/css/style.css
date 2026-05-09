@@ -138,6 +138,14 @@ h4{
 	left: 0px;
 	top: 0px;
 }
+.menu-toggle{
+	position:absolute;
+	opacity:0;
+	pointer-events:none;
+}
+.menu-toggle-btn{
+	display:none;
+}
 .menu nav{
 	display:flex;
 	width:96%;
@@ -346,9 +354,6 @@ a.zamknij{
 		position:static;
 		margin-bottom:10px;
 	}
-	.menu nav{
-		display:block;
-	}
 	.menu nav > *{
 		display:block;
 	}
@@ -361,6 +366,52 @@ a.zamknij{
 	}
 	.dymek{
 		position:static;
+	}
+}
+@media screen and (max-width: 850px){
+	.menu{
+		position:static;
+	}
+	.menu-toggle-btn{
+		display:flex;
+		flex-direction:column;
+		justify-content:space-between;
+		width:28px;
+		height:20px;
+		padding:14px;
+		margin:0;
+		cursor:pointer;
+	}
+	.menu-toggle-btn span{
+		display:block;
+		height:3px;
+		background:#fff;
+		border-radius:1px;
+		transition:transform .25s ease, opacity .2s ease;
+	}
+	.menu nav{
+		display:none;
+		flex-direction:column;
+		width:100%;
+		padding:0;
+		font-size:17px;
+	}
+	.menu-toggle:checked ~ nav{
+		display:flex;
+	}
+	.menu nav > *{
+		display:block;
+		padding:12px 4%;
+		border-top:1px solid rgba(255,255,255,.08);
+	}
+	.menu-toggle:checked ~ .menu-toggle-btn span:nth-child(1){
+		transform:translateY(8px) rotate(45deg);
+	}
+	.menu-toggle:checked ~ .menu-toggle-btn span:nth-child(2){
+		opacity:0;
+	}
+	.menu-toggle:checked ~ .menu-toggle-btn span:nth-child(3){
+		transform:translateY(-9px) rotate(-45deg);
 	}
 }
 

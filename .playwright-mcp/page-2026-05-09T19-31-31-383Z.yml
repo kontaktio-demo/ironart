@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Kowalstwo Artystyczne Łódź - Iron Art Kowalstwo Artystyczne i Jubilerstwo Łódź, Warszawa" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "Kowalstwo Artystyczne Łódź - Iron Art" [ref=e5]
+        - text: Kowalstwo Artystyczne i Jubilerstwo Łódź, Warszawa
+      - generic [ref=e6]:
+        - img "wersja polska kowalstwa artystycznego" [ref=e7]
+        - link "wersja angielska kowalstwa artystycznego" [ref=e8] [cursor=pointer]:
+          - /url: en/index.html
+          - img "wersja angielska kowalstwa artystycznego" [ref=e9]
+      - paragraph [ref=e10]:
+        - link "+48 887 432 093" [ref=e11] [cursor=pointer]:
+          - /url: tel:887432093
+        - text: Łódź, ul. Brzezińska 38
+  - generic [ref=e12]:
+    - checkbox "Otwórz menu"
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - link "BALUSTRADY KUTE" [ref=e21] [cursor=pointer]:
+            - /url: balustrady-wewnetrzne.html
+          - link "KOWALSTWO PROJEKTY" [ref=e22] [cursor=pointer]:
+            - /url: projekty-kute.html
+            - text: KOWALSTWO
+            - text: PROJEKTY
+          - link "WYSTRÓJ WNĘTRZ" [ref=e23] [cursor=pointer]:
+            - /url: wystroj-wnetrz.html
+        - generic [ref=e26]:
+          - link "MEBLE KUTE" [ref=e27] [cursor=pointer]:
+            - /url: meble-kute.html
+          - link "METALOPLASTYKA" [ref=e28] [cursor=pointer]:
+            - /url: metaloplastyka.html
+          - link "OGRODZENIA I BRAMY" [ref=e29] [cursor=pointer]:
+            - /url: ogrodzenia-kute.html
+      - iframe [ref=e30]:
+        - generic [active] [ref=f21e1]:
+          - generic "Odtwarzacz wideo YouTube" [ref=f21e3]
+          - generic [ref=f21e5]:
+            - generic:
+              - generic:
+                - button "Odtwórz film" [ref=f21e10] [cursor=pointer]:
+                  - generic [ref=f21e13]:
+                    - img
+                - button "Ukryj elementy sterujące odtwarzaczem" [ref=f21e14] [cursor=pointer]
+                - generic [ref=f21e21]:
+                  - generic [ref=f21e22]:
+                    - link "Iron-Art Kowalstwo Artystyczne" [ref=f21e23] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=clKhdraJS-0
+                    - link "Maciej Kozubal" [ref=f21e24] [cursor=pointer]:
+                      - /url: /channel/UCslfSxsZdUMQQv-lgQNP0UQ
+                      - generic [ref=f21e25]: Maciej Kozubal
+                  - generic [ref=f21e26]:
+                    - button [ref=f21e27] [cursor=pointer]
+                    - generic [ref=f21e29]:
+                      - generic: Maciej Kozubal
+                      - generic: 37 subskrybentów
+      - img "Film o naszym kowalstwie - kujemy balustradę" [ref=e31] [cursor=pointer]
+      - heading "Metaloplastyka czy Kowalstwo Artystyczne ?" [level=1] [ref=e32]
+      - paragraph [ref=e33]:
+        - text: Siła czy finezja, a może jedno i drugie razem?
+        - strong [ref=e34]: Kowalstwo artystyczne
+        - text: firmy "Iron-Art" jest próbą połączenia obu tych - wydawać by się mogło - zupełnie odrębnych rzemiosł, lecz łączy je, najogólniej rzecz biorąc, słowo… metaloplastyka.
+        - text: Inspiruje nas secesja i wszystko, co z nią związane, dlatego często nasze wyroby cechuje nuta Art Nouveau.
+        - text: Czy nam się to udało... ? Oceńcie Państwo sami.
+      - paragraph [ref=e35]:
+        - text: Wykonujemy
+        - strong [ref=e36]:
+          - link "balustrady kute schodowe wewnętrzne" [ref=e37] [cursor=pointer]:
+            - /url: balustrady-kute-wewnetrzne.html
+        - text: ", nowoczesne i stylizowane barierki schodowe i balkonowe, drewniano-metalowe pochwyty i poręcze stalowe, a także meble kute do pokoju i przedpokoju."
+      - heading "Historia firmy" [level=2] [ref=e38]
+      - paragraph [ref=e39]:
+        - img "Kowalstwo artystyczne IRON ART Łódź" [ref=e40]
+        - text: Historia naszej firmy rozpoczęła się jeszcze przed II wojną światową i sięga aż czterech pokoleń.
+      - paragraph [ref=e41]: Wszystko zaczęło się od mojego dziadka, który nauczył się zawodu kowala od swojego wuja, a następnie przekazał tę wiedzę swoim synom.
+      - paragraph [ref=e42]:
+        - text: Po 40 latach mój ojciec powróciwszy do kowalstwa, otworzył w
+        - strong [ref=e43]: Łodzi
+        - text: kuźnię, którą obecnie z wielkim zaangażowaniem i pasją prowadzę ja.
+      - heading "Kowalstwo artystyczne Łódź - Maciej Kozubal" [level=2] [ref=e44]
+      - paragraph [ref=e45]: Zawód metaloplastyka otworzył się przede mną po ukończeniu Państwowego Liceum Sztuk Plastycznych, po którym otrzymałem tytuł Technika Sztuk Plastycznych w zakresie wyrobów artystycznych, ze specjalizacją metaloplastyki. Moim kierunkiem przodującym było kowalstwo artystyczne.
+      - paragraph [ref=e46]: W swoją pracę wkładam dużo serca i cierpliwości. Moje wyroby są efektem precyzji, pasji i poświęcenia. Ponadto często wykorzystuję elementy zdobieniowe, dobierane indywidualnie do każdego wyrobu. Dzięki zdobytemu doświadczeniu udało mi się połączyć kowalstwo artystyczne wraz z metaloplastyką kolorową. Swoją pracę traktuje jako hobby, które sprawia mi ogromną radość.
+      - heading "Proces tworzenia" [level=2] [ref=e47]
+      - paragraph [ref=e48]:
+        - text: Na początku tworzenia produktu, przygotowuję projekt wybranego modelu. Skupiam się przede wszystkim na
+        - strong [ref=e49]:
+          - text: "balustradach: kutych, balustradach schodowych,"
+          - link "balustradach wewnętrznych" [ref=e50] [cursor=pointer]:
+            - /url: balustrady-kute-wewnetrzne.html
+          - text: ", barierkach, barierkach schodowych oraz meblach kutych"
+        - text: . Swoje wyroby często oprawiam w kamienie półszlachetne. Ponadto balustrady, barierki i meble posrebrzam, pozłacam lub miedziuję. W zakres mebli kutych wchodzą między innymi ławy, stoliki i stoliczki oraz wieszaki. Moje wyroby nawiązują do architektury okresu secesji oraz ArtDeco, co oznacza, że są one bogato i precyzyjnie zdobione. W swojej twórczości łączę
+        - strong [ref=e51]: kowalstwo artystyczne z metaloplastyką
+        - text: kolorową w jedną spójną całość.
+      - paragraph [ref=e52]: Produktem szczególnie wyjątkowym są balustrady, ponieważ ich duże gabaryty pozwalają dokładnie ukazać piękne zdobienia.
+      - paragraph [ref=e53]: Poza artystycznymi wyrobami zajmujemy się także prostszymi pracami, które są uboższe w formie, lecz dostosowane do wymagań i potrzeb indywidualnych. Meble kute, balustrady, wieszaki tworzone pod wymiar dzięki ręcznemu wykonaniu nadają wnętrzom niepowtarzalny klimat.
+      - paragraph [ref=e54]:
+        - text: Zapraszamy serdecznie do naszej pracowni
+        - strong [ref=e55]:
+          - link "Kowalstwa Artystycznego Iron-Art Łódź" [ref=e56] [cursor=pointer]:
+            - /url: kowalstwo-lodz.html
+        - text: . Polecamy zapoznać się z naszymi wyrobami, balustradami kutymi wewnętrznymi i projektami z działu metaloplastyki!
+      - paragraph [ref=e57]: Technik Sztuk Plastycznych i Wyrobów Artystycznych, Mistrz Jubiler
+      - heading "Unikalne balustrady kute wewnętrzne" [level=2] [ref=e58]
+      - paragraph [ref=e59]: Balustrady kute wewnętrzne tworzone ręcznie w naszej pracowni kowalstwa artystycznego w Łodzi, to wyjątkowe dzieła sztuki rzemieślniczej, które łączą w sobie funkcjonalność z estetyką. Ich unikalność tkwi w precyzyjnym wykonaniu i dbałości o detale, które są rezultatem pracy doświadczonego kowala.
+      - paragraph [ref=e60]: Każda balustrada schodowa jest jedyna w swoim rodzaju, odzwierciedlając indywidualne gusta i potrzeby klienta. Tradycyjne techniki kowalstwa artystycznego, używane do ich wyrobu produktów, nadają im niepowtarzalny charakter i trwałość, czyniąc je inwestycją na lata.
+      - paragraph [ref=e61]: Kute balustrady wewnętrzne dodają wnętrzom elegancji i klasy, stając się centralnym punktem aranżacji, który przyciąga wzrok i zachwyca detalami.
+      - paragraph:
+        - img "Maciej Kozubal - Kowal Artystyczny" [ref=e62]
+      - heading "Kowalstwo Artystyczne - Specyfikacja pracy" [level=2] [ref=e63]
+      - list [ref=e64]:
+        - listitem [ref=e65]: Nasze wyroby są wykonane w sposób precyzyjny, z uwzględnieniem najdrobniejszych szczegółów. Przykładamy wielką wagę do obróbki łączeń materiałów, aby całość prezentowała się w sposób estetyczny.
+        - listitem [ref=e66]:
+          - text: Każdy produkt wykonywany w
+          - strong [ref=e67]:
+            - link "pracowni kowalstwa artystycznego Iron-Art" [ref=e68] [cursor=pointer]:
+              - /url: kowalstwo-lodz.html
+          - text: ", jest wykuwany ręcznie przez kowala z wieloletnim doświadczeniem w tej dziedzinie oraz wykwalifikowanych pracowników."
+        - listitem [ref=e69]: Zapewniamy indywidualne i priorytetowe podejście do każdego zlecenia. Oferujemy także pomoc i doradztwo podczas wyboru projektów, kolorów, materiałów.
+        - listitem [ref=e70]: W ramach naszej oferty zapewniamy Klientom możliwość zamówienia odlewanych lub kutych elementów mosiężnych.
+        - listitem [ref=e71]: Oferujemy patynowanie stali, zarówno całej powierzchni przedmiotu, jak i tylko delikatnych przetarć na wybranych elementach.
+        - listitem [ref=e72]: Pokrywamy stal galwanicznie powłokami niklu, mosiądzu lub chromu, a także srebra lub złota.
+        - listitem [ref=e73]: Każdy wyrób zabezpieczamy produktami antykorozyjnymi, dzięki czemu przedłużamy ich żywotność i estetykę.
+        - listitem [ref=e74]: Nasze wyroby są cynkowane ogniowo, aby uchronić je przed korozją i zapewnić im efektowny wygląd na długie lata.
+        - listitem [ref=e75]: W ramach oferty wykonujemy odlewy z żeliwa, staliwa oraz aluminium.
+        - listitem [ref=e76]: Oferujemy możliwość wykorzystania gotowych projektów lub własnego pomysłu. Na życzenie Klienta zapewniamy możliwość przygotowania projektu indywidualnego, dopasowanego do potrzeb i oczekiwań.
+        - listitem [ref=e77]: Specjalizujemy się w stylistyce z okresu secesyjnego, art deco, baroku, gotyku, ale zapewniamy możliwość wykorzystania również innych stylów architektonicznych.
+        - listitem [ref=e78]: Zapewniamy możliwość zrealizowania nowoczesnych projektów według życzenia Klienta.
+    - iframe [ref=e79]:
+      - link "Otwórz w Mapach (otwiera się w nowej karcie)" [ref=f22e4] [cursor=pointer]:
+        - /url: about:invalid#zClosurez
+        - text: Otwórz w Mapach
+        - img [ref=f22e6]
+  - contentinfo [ref=e80]:
+    - heading "Kowalstwo Artystyczne Iron-Art" [level=1] [ref=e81]
+    - generic [ref=e82]:
+      - table [ref=e84]:
+        - rowgroup [ref=e85]:
+          - 'row "Adres pracowni: ul. Beskidzka 59 91-611 Łódź" [ref=e86]':
+            - rowheader "Adres pracowni:" [ref=e87]
+            - cell "ul. Beskidzka 59 91-611 Łódź" [ref=e88]:
+              - text: ul. Beskidzka 59
+              - text: 91-611 Łódź
+          - 'row "Adres biura: ul. Brzezińska 38 92-103 Łódź" [ref=e89]':
+            - rowheader "Adres biura:" [ref=e90]
+            - cell "ul. Brzezińska 38 92-103 Łódź" [ref=e91]:
+              - text: ul. Brzezińska 38
+              - text: 92-103 Łódź
+          - 'row "Telefon: +48 887 432 093" [ref=e92]':
+            - rowheader "Telefon:" [ref=e93]
+            - cell "+48 887 432 093" [ref=e94]:
+              - link "+48 887 432 093" [ref=e95] [cursor=pointer]:
+                - /url: tel:887432093
+          - 'row "E-mail: biuro@kowalstwo-artystyczne.com.pl" [ref=e96]':
+            - rowheader "E-mail:" [ref=e97]
+            - cell "biuro@kowalstwo-artystyczne.com.pl" [ref=e98]:
+              - link "biuro@kowalstwo-artystyczne.com.pl" [ref=e99] [cursor=pointer]:
+                - /url: mailto:biuro@kowalstwo-artystyczne.com.pl
+      - paragraph [ref=e100]:
+        - text: © Iron Art Łódź,
+        - link "Warszawa" [ref=e101] [cursor=pointer]:
+          - /url: kowalstwo-artystyczne-warszawa.html
+        - text: 2004-2022
+        - strong [ref=e102]: Kowalstwo Artystyczne
+        - text: ", metaloplastyka, meble kute, balustrady kute wewnętrzne i zewnętrzne - artystyczne."
+      - paragraph [ref=e103]:
+        - link "Web Design - blumo.pl" [ref=e104] [cursor=pointer]:
+          - /url: https://www.blumo.pl/
+          - text: Web Design -
+          - strong [ref=e105]: blumo.pl
+  - link "Zadzwoń do kowala" [ref=e106] [cursor=pointer]:
+    - /url: tel:887432093
+  - link "Facebook kowalstwo artystyczne" [ref=e107] [cursor=pointer]:
+    - /url: https://www.facebook.com/Kowalstwo-artystyczne-Iron-Art-1655904824500073/
+    - img "Facebook kowalstwo artystyczne" [ref=e108]
