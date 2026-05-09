@@ -10,3 +10,5 @@ desktop.ini
 *.bak
 
 node_modules/
+
+.playwright-mcp/
